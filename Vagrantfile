@@ -60,8 +60,16 @@ Vagrant.configure(2) do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
+     sudo yum update -y
      sudo yum install -y epel-release
      sudo yum install -y htop
+     
+     # glances
      sudo curl -L http://bit.ly/glances | /bin/bash
+
+     # docker	
+     sudo curl -fsSL https://get.docker.com/ | sh
+     sudo usermod -aG docker vagrant
+     sudo systemctl start docker.service
   SHELL
 end
