@@ -74,6 +74,7 @@ Vagrant.configure(2) do |config|
 
      # mongodb
      sudo yum install -y mongodb-server
+     sudo systemctl enable mongod && sudo systemctl start mongod
 
      # system tools
      sudo yum install -y strace ltrace sysstat atop lsof
