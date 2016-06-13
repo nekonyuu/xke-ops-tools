@@ -70,10 +70,10 @@ Vagrant.configure(2) do |config|
      # docker
      sudo curl -fsSL https://get.docker.com/ | sh
      sudo usermod -aG docker vagrant
-     sudo systemctl start docker.service
+     sudo systemctl enable docker.service && sudo systemctl start docker.service
 
      # mongodb
-     sudo yum install -y mongodb-server
+     sudo yum install -y mongodb-server mongodb
      sudo systemctl enable mongod && sudo systemctl start mongod
 
      # system tools
