@@ -63,13 +63,20 @@ Vagrant.configure(2) do |config|
      sudo yum update -y
      sudo yum install -y epel-release
      sudo yum install -y htop
-     
+
      # glances
      sudo curl -L http://bit.ly/glances | /bin/bash
 
-     # docker	
+     # docker
      sudo curl -fsSL https://get.docker.com/ | sh
      sudo usermod -aG docker vagrant
      sudo systemctl start docker.service
+
+     # mongodb
+     sudo yum install -y mongodb-server
+
+     # system tools
+     sudo yum install -y strace ltrace sysstat atop lsof
+
   SHELL
 end
