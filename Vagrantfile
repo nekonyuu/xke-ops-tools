@@ -45,5 +45,8 @@ Vagrant.configure(2) do |config|
      docker run -d -v /var/run/docker.sock:/var/run/docker.sock:ro --pid host --net host -it nicolargo/glances
      docker run -d -v /var/run/docker.sock:/var/run/docker.sock:ro --pid host --net host -it nicolargo/glances
      docker run -d -v /var/run/docker.sock:/var/run/docker.sock:ro --pid host --net host -it nicolargo/glances
+     
+     echo 'while(true){db.opstool.insert({"foo":"bar"})}' > insert.js
+
   SHELL
 end
