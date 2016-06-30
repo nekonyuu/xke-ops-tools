@@ -25,6 +25,8 @@ Vagrant.configure(2) do |config|
      sudo curl -fsSL https://get.docker.com/ | sh
      sudo usermod -aG docker vagrant
      sudo systemctl enable docker.service && sudo systemctl start docker.service
+     sudo docker pull mongo:latest    
+
 
      # mongodb
      sudo yum install -y mongodb-server mongodb
